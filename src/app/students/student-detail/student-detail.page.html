@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/students"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ loadedStudent.firstName }} {{ loadedStudent.lastName }}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="deleteStudent()">
+        <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col class="ion-no-padding"><ion-img [src]="loadedStudent.imageUrl"></ion-img></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h1 class="ion-text-center">{{ loadedStudent.firstName }} {{ loadedStudent.lastName }}</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h4 class="ion-text-center">Courses</h4>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item *ngFor="let course of loadedStudent.courses">
+            {{ course }}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

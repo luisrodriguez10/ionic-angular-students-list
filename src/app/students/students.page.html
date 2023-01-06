@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Students</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <app-student-item *ngFor="let student of students" [studentItem]="student"></app-student-item>
+  </ion-list>
+</ion-content>
